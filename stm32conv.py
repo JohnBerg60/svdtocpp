@@ -40,6 +40,7 @@ def comment(s):
 
 
 def bitregister(name, fields):
+    fields.sort(key=lambda x: x.bit_offset)
     bitOffset = 0
     print("")
     print("enum class %s" % (name))
