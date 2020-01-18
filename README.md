@@ -20,4 +20,11 @@ rm -fR tmp
 
 
 ### running the conversion
-python stm32conv.py STM32F030
+```sh
+$ python stm32conv.py STM32F030.svd -o proefje.hpp
+```
+
+### final notes
+On many svd file, the arm core (Systick, NVIC) is missing. These missing files can be found at:  
+https://github.com/ARM-software/CMSIS/tree/master/Device/ARM/SVD  
+The converter checks if a systick is present, if not it adds the ARM core file.
